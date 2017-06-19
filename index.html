@@ -9,46 +9,56 @@
 <link rel="shortcut icon" type="image/ico" href="http://www.datatables.net/favicon.ico">
 <title>Tabla dinámica</title>
 <link href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="css.css" rel="stylesheet">
 <style type="text/css" class="init"></style>
 </head>
 <body class="dt-example">
 	<div class="container">
 		<section>
-			<h1>DataTables example <span>Zero configuration</span></h1>
+			<h1>DataTables example <span>Ajax sourced data</span></h1>
 			<div class="info">
-				<p>DataTables has most features enabled by default, so all you need to do to use it with your own tables is to call the construction function:
-				<code>$().DataTable();</code>.</p>
-				<p>Searching, ordering and paging goodness will be immediately added to the table, as shown in this example.</p>
+				<p>DataTables has the ability to read data from virtually any JSON data source that can be obtained by Ajax. This can be done, in its most simple form, by setting
+				the <a href="//datatables.net/reference/option/ajax"><code class="option" title="DataTables initialisation option">ajax</code></a> option to the address of the
+				JSON data source.</p>
+				<p>The <a href="//datatables.net/reference/option/ajax"><code class="option" title="DataTables initialisation option">ajax</code></a> option also allows for more
+				advanced configuration such as altering how the Ajax request is made. See the <a href="//datatables.net/reference/option/ajax"><code class="option" title=
+				"DataTables initialisation option">ajax</code></a> documentation and the <a href="../ajax">other Ajax examples</a> for further information.</p>
+				<p>The example below shows DataTables loading data for a table from arrays as the data source (object parameters can also be used through the <a href=
+				"//datatables.net/reference/option/columns.data"><code class="option" title="DataTables initialisation option">columns.data</code></a> option ).</p>
 			</div>
 			<div class="demo-html"></div>
 			<table id="example" class="display" cellspacing="0" width="100%">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Extn.</th>
-                <th>Start date</th>
-                <th>Salary</th>
-            </tr>
-        </thead>
-        <tfoot>
-            <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Extn.</th>
-                <th>Start date</th>
-                <th>Salary</th>
-            </tr>
-        </tfoot>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Position</th>
+						<th>Office</th>
+						<th>Extn.</th>
+						<th>Start date</th>
+						<th>Salary</th>
+					</tr>
+				</thead>
+				<tfoot>
+					<tr>
+						<th>Name</th>
+						<th>Position</th>
+						<th>Office</th>
+						<th>Extn.</th>
+						<th>Start date</th>
+						<th>Salary</th>
+					</tr>
+				</tfoot>
 			</table>
 		</section>
 	</div>
 <script type="text/javascript" src="//code.jquery.com/jquery-1.12.4.js"></script>
 <script type="text/javascript" src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" class="init">
-$(document).ready(function(){$('#example').DataTable({"ajax": 'https://datatables.net/examples/ajax/data/arrays.txt'});});
+$(document).ready(function() {
+	$('#example').DataTable( {
+		"ajax": '//datatables.net/examples/ajax/data/arrays.txt'
+	} );
+} );
 </script>
 </body>
 </html>
