@@ -1,2 +1,2 @@
-# nefelibata
-Dicho de una persona: Soñadora, que no se apercibe de la realidad.
+# Inefable
+Que no se puede explicar con palabras.
